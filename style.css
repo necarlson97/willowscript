@@ -1,0 +1,12 @@
+#textInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#imageContainer img {
+    display: block;
+    margin-bottom: 10px; /* Adjust as needed */
+}
+
+/* Responsive adjustments and additional styling as required */
