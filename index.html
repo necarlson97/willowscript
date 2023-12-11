@@ -4,8 +4,8 @@
     <title>Vertical Cipher Script Visualizer</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
-    <input type="text" id="textInput" placeholder="Type here..." onkeyup="updateImages()">
+<body onload="updateImages()">
+    <input type="text" id="textInput" placeholder="Type here..." onkeyup="updateImages()" value="&quot;The lazy fox jumps over the brown dog&quot;.">
     <div id="imageContainer"></div>
     <script src="script.js"></script>
 </body>

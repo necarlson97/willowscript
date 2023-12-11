@@ -1,12 +1,56 @@
+body {
+    background: black;
+}
+
 #textInput {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     font-size: 16px;
+    margin: 0em;
+    border: none;
+}
+
+#imageContainer {
+    column-fill: auto; /* Fill columns one at a time */
+    height: 90vh; /* Adjust height as needed */
+    width: 90%; /* Ensure container takes full width */
+    column-width: 2em; /* Each column will be as wide as an image */
+    column-gap: 1em; /* Space between columns */
+    margin: 1em 0 0 0;
 }
 
 #imageContainer img {
     display: block;
-    margin-bottom: 10px; /* Adjust as needed */
+    width: 2em;
+    margin-bottom: -1px;
+    page-break-inside: avoid; /* Avoid breaking images across columns */
+    break-inside: avoid-column; /* CSS3 property for column breaks */
 }
 
-/* Responsive adjustments and additional styling as required */
+#imageContainer br {
+    display: block;
+    content: "";
+    margin-top: 1em; /* Increase vertical space for <br> */
+    height: 0; /* Prevents adding extra height */
+}
+
+.word {
+    display: inline-block; /* Prevents breaking inside a word */
+    break-inside: avoid-column; /* Avoids column breaks inside a word */
+}
+
+
+/* Print-specific styles */
+@media print {
+    body {
+        background: white;
+    }
+
+    #imageContainer img {
+        filter: invert(100%); /* Inverts the colors of the images */
+    }
+
+    /*#textInput {
+        display: none; /* Optionally hide the input field when printing */
+    }*/
+}
